@@ -25,7 +25,7 @@ if uploaded is not None:
         st.error(f"Could not read the CSV: {exc}")
         st.stop()
 else:
-    default_path = Path(__file__).resolve().parent / "data" / "demo_dataset.csv"
+    default_path = Path(__file__).resolve().parent / "demo_dataset.csv"
     df_raw = load_dataset(str(default_path))
 
 df, schema = clean_dataset(df_raw, drop_exact_duplicates=drop_duplicates)
